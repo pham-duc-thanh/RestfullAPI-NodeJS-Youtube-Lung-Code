@@ -32,4 +32,16 @@ Book.getById = (id) => {
     return data;
 };
 
+Book.create = (data, result) => {
+  result (data);
+};
+
+Book.delete = (id, result) => {
+  result("Xoá book có id " + id + " thành công")
+}
+
+Book.update = (data, result) => {
+  result (data);
+};
+
 module.exports =  Book;

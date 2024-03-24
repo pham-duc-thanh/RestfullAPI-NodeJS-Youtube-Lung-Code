@@ -30,3 +30,27 @@ exports.detail = (req, res) => {
         res.status(404).send({ message: "Book not found" });
     }
 };
+
+// body-parser 
+exports.add_book = function(req, res) {
+    var data = req.body;
+
+    Book.create(data, function (response) {
+        res.send({ result: response });
+    })
+}
+
+exports.delete_book = (req, res) => {
+    var id = req.params.id;
+    Book.delete(id, (response) => {
+        res.send({ result: response });
+    })
+}
+
+exports.update_book = (req, res) => {
+    var data = req.body;
+
+    Book.update(data, function (response) {
+        res.send({ result: response });
+    })
+}
