@@ -1,0 +1,21 @@
+### package.json: 
+File package.json là một tập tin metadata cho 
+một dự án Node.js. Nó chứa thông tin như tên 
+dự án, phiên bản, mô tả, tác giả, giấy phép, 
+và các cài đặt khác liên quan đến dự án. 
+Dưới đây là một số trường thông tin cụ thể:
+
+{
+  "name": "nodejs", => tên dự án
+  "version": "1.0.0", => phiên bản của dự án
+  "description": "Đây là dự án đầu tiên", =>
+    mô tả về dự án, giúp người dùng hiểu mục đích và cách sử dụng
+
+  "main": "index.js", => nơi làm việc
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "taothichmi2009@gmail.com",
+  "license": "ISC"
+}
