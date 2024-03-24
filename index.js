@@ -1,12 +1,34 @@
-var http = require("http");
+var express = require("express");
+var app = express();
 
-var server = http.createServer((req, res) => {
-    res.setHeader("Content-Type", "text/html")  // mặc định là html
-    // res.setHeader("Content-Type", "text/plain");
-    // res.setHeader("Content-Type", "application/json"); // viết API dùng nhiều hơn
-    res.end("<h1>Hello NodeJS</h1>")
+app.get("/" , (req, res) => {
+    res.sendFile(__dirname + '/index.html')
 });
 
-server.listen(8080, () => {
-    console.log("Server listening http://localhost:8080");
+app.get("/json" , (req, res) => {
+    var data  = [
+        {
+            id: 1,
+            name: "Thanh"
+        },
+        {
+            id: 2,
+            name: "Xinh"
+        },
+        {
+            id: 3,
+            name: "Hậu"
+        },
+        {
+            id: 4,
+            name: "Nhất"
+        },
+    ];
+    
+    res.send({persons: data})
+});
+
+
+app.listen(3000, () => {
+    console.log("Server listening http://localhost:3000");
 });
