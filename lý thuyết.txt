@@ -1,3 +1,2 @@
-## Cài đặt mysql
-
- npm install --save mysql
+## Cài đặt JWT
+    npm i --save jsonwebtoken
