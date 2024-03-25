@@ -23,12 +23,9 @@ exports.get_list = (req, res) => {
 };
 
 exports.detail = (req, res) => {
-    var data = Book.getById(req.params.id);
-    if (data) {
-        res.send({ result: data });
-    } else {
-        res.status(404).send({ message: "Book not found" });
-    }
+    Book.getById(req.params.id, function(response) {
+        res.send({ result: response });
+    });
 };
 
 // body-parser 

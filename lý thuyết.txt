@@ -1,2 +1,3 @@
-### CÀi đặt Express: 
- npm install express --save
+## Cài đặt mysql
+
+ npm install --save mysql
