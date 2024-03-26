@@ -20,7 +20,19 @@ let make =  function(user) {
 
 
 // check => xác thực mã đúng, sai, hêt hạn
+let check = function (tokent) {
+    return new Promise((resolve, reject) => {
+        jwt.verify(tokent, _APP.ACCESS_TOKEN, function(err, data) {
+            if(err) {
+                return reject(err);
+            }
+            return resolve(data);
+            
+        });
+    })
+}
 
 module.exports = {
-    make: make
+    make: make,
+    check: check
 }
